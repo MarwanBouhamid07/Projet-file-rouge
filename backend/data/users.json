@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "last_name": "Bouhamid",
+        "first_name": "Marwan",
+        "email": "admin@jobmatch.local",
+        "password": "$2y$10$s0zp4R2PIwyFcFICTJHHbexAmFfes.Z0H9VTmLshIebqa1sZzOcaO",
+        "role": "admin",
+        "domaine": null,
+        "years_experience": null
+    },
+    {
+        "id": 2,
+        "last_name": "Mansouri",
+        "first_name": "Sarah",
+        "email": "sarah.recruteur@jobmatch.local",
+        "password": "$2y$10$KC6Nn6Pnl6reLDqfEZfTXuG7h53/uR9Kr1I0MJd2TQjg7pjQBuZgy",
+        "role": "recruteur",
+        "domaine": "Ressources Humaines IT",
+        "years_experience": 5
+    },
+    {
+        "id": 3,
+        "last_name": "Alami",
+        "first_name": "Karim",
+        "email": "karim.rh@jobmatch.local",
+        "password": "$2y$10$KC6Nn6Pnl6reLDqfEZfTXuG7h53/uR9Kr1I0MJd2TQjg7pjQBuZgy",
+        "role": "recruteur",
+        "domaine": "Tech & Innovation",
+        "years_experience": 6
+    }
+]

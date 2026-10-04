@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartMatch : plateforme de recrutement avec matching intelligent.">
+    <title>SmartMatch - Plateforme de Recrutement Intelligent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .nav-links .nav-link { border-bottom: 2px solid transparent; }
+        .nav-links .nav-link.active { color: #4f46e5; border-bottom-color: #4f46e5; }
+        .nav-menu.open { display: flex; }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900">
+    <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
+            <a href="#hero" class="flex items-center gap-3">
+                <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 text-sm font-bold text-white">SM</span>
+                <span class="text-xl font-bold">SmartMatch</span>
+            </a>
+
+            <button id="navToggle" type="button" class="rounded-lg border border-slate-200 p-2 text-slate-700 md:hidden" aria-label="Menu mobile">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <nav id="navMenu" class="nav-menu hidden w-full flex-col gap-4 md:flex md:w-auto md:flex-row md:items-center md:gap-8">
+                <ul class="nav-links flex flex-col gap-1 text-sm font-medium text-slate-600 md:flex-row md:gap-6">
+                    <li><a href="#hero" class="nav-link active block px-2 py-2">Accueil</a></li>
+                    <li><a href="#how-it-works" class="nav-link block px-2 py-2">Comment ca marche</a></li>
+                    <li><a href="#offers-preview" class="nav-link block px-2 py-2">Dernieres Offres</a></li>
+                </ul>
+                <a href="admin/login.html" class="rounded-xl border border-indigo-200 px-4 py-2 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50">Espace Admin / Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="bg-gradient-to-br from-indigo-700 via-indigo-600 to-slate-900 text-white">
+        <div class="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center md:py-20">
+            <div>
+                <p class="inline-flex rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-indigo-100">Recrutement intelligent</p>
+                <h1 class="mt-4 text-4xl font-bold leading-tight md:text-5xl">Trouvez l'offre qui correspond <span class="text-amber-300">vraiment</span> a votre profil</h1>
+                <p class="mt-4 max-w-xl text-indigo-100">Grace a notre systeme de Smart Matching, gagnez du temps et postulez aux opportunites les plus pertinentes selon vos competences et votre experience.</p>
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <a href="#offers-preview" class="rounded-xl bg-amber-400 px-6 py-3 font-semibold text-slate-900 transition hover:bg-amber-300">Decouvrir les offres</a>
+                    <a href="admin/login.html" class="rounded-xl border border-white/40 px-6 py-3 font-semibold text-white transition hover:bg-white/10">Espace Recruteur</a>
+                </div>
+                <dl class="mt-8 grid max-w-md grid-cols-3 gap-4 text-center">
+                    <div class="rounded-2xl bg-white/10 p-3"><dt class="text-xs text-indigo-100">Offres actives</dt><dd id="heroOfferCount" class="text-xl font-bold">-</dd></div>
+                    <div class="rounded-2xl bg-white/10 p-3"><dt class="text-xs text-indigo-100">Domaines</dt><dd class="text-xl font-bold">IT</dd></div>
+                    <div class="rounded-2xl bg-white/10 p-3"><dt class="text-xs text-indigo-100">Matching</dt><dd class="text-xl font-bold">95%</dd></div>
+                </dl>
+            </div>
+            <div class="rounded-3xl bg-white p-6 text-slate-900 shadow-2xl">
+                <div class="flex items-center gap-4">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100 font-bold text-indigo-700">DF</div>
+                    <div><p class="font-semibold">Developpeur Fullstack</p><p class="text-sm text-slate-500">Disponible immediatement</p></div>
+                    <span class="ml-auto rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-700">95% Match</span>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
+                    <span class="rounded-full bg-slate-100 px-3 py-1">PHP</span>
+                    <span class="rounded-full bg-slate-100 px-3 py-1">React</span>
+                    <span class="rounded-full bg-slate-100 px-3 py-1">MySQL</span>
+                    <span class="rounded-full bg-slate-100 px-3 py-1">API REST</span>
+                </div>
+                <div class="mt-5 rounded-2xl bg-slate-50 p-4 text-sm text-slate-600">Exemple de carte de compatibilite entre un profil et une offre publiee sur SmartMatch.</div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <section id="how-it-works" class="bg-white py-16">
+        <div class="mx-auto max-w-6xl px-4">
+            <p class="text-center text-sm font-semibold uppercase tracking-widest text-indigo-600">Comment ca marche</p>
+            <h2 class="mt-2 text-center text-3xl font-bold">Trois etapes simples</h2>
+            <div class="mt-10 grid gap-6 md:grid-cols-3">
+                <div class="rounded-2xl border border-slate-200 p-6 shadow-sm">
+                    <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 font-bold text-indigo-700">1</span>
+                    <h3 class="mt-4 font-semibold">Explorez les offres</h3>
+                    <p class="mt-2 text-sm text-slate-500">Parcourez les dernieres offres publiees par nos recruteurs partenaires, sans compte requis.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 p-6 shadow-sm">
+                    <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 font-bold text-indigo-700">2</span>
+                    <h3 class="mt-4 font-semibold">Comparez votre profil</h3>
+                    <p class="mt-2 text-sm text-slate-500">Verifiez le domaine demande et les annees d'experience requises pour chaque opportunite.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 p-6 shadow-sm">
+                    <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 font-bold text-indigo-700">3</span>
+                    <h3 class="mt-4 font-semibold">Candidatez bientot</h3>
+                    <p class="mt-2 text-sm text-slate-500">L'inscription candidat et le score de matching arrivent dans le prochain sprint.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="offers-preview" class="bg-slate-50 py-16">
+        <div class="mx-auto max-w-6xl px-4">
+            <div class="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                    <p class="text-sm font-semibold uppercase tracking-widest text-indigo-600">Dernieres Offres</p>
+                    <h2 class="mt-2 text-3xl font-bold">Offres a la une</h2>
+                    <p class="mt-2 text-slate-500">Chargees en direct depuis <code class="rounded bg-slate-100 px-1">GET api.php?resource=offres</code>.</p>
+                </div>
+                <span id="offersCountBadge" class="rounded-full bg-indigo-100 px-4 py-2 text-sm font-semibold text-indigo-700">Chargement...</span>
+            </div>
+
+            <p id="offersLoading" class="mt-8 rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center text-slate-500">Chargement des offres...</p>
+            <p id="offersEmpty" class="mt-8 hidden rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center text-slate-500">Aucune offre disponible pour le moment.</p>
+            <div id="offersGrid" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 py-10 text-slate-300">
+        <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 md:flex-row">
+            <p class="font-semibold text-white">SmartMatch - Sprint 2</p>
+            <p class="text-sm">Backend OOP + JSON + Tailwind CDN. Aucune donnee codee en dur sur cette page.</p>
+            <a href="admin/login.html" class="text-sm text-indigo-300 hover:text-indigo-200">Administration</a>
+        </div>
+    </footer>
+
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

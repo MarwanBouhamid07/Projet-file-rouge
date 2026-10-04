@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "titre": "Développeur Fullstack PHP & JavaScript",
+        "description": "Nous recherchons un développeur Fullstack talentueux pour concevoir et maintenir des applications web modernes et scalables au sein d'une équipe agile.",
+        "domaine": "Développement Web",
+        "years_required": 3,
+        "image": "offre_fullstack.jpg",
+        "id_recruteur": 2,
+        "created_at": "2026-09-21T10:00:00Z"
+    },
+    {
+        "id": 2,
+        "titre": "Ingénieur Cloud & DevOps Senior",
+        "description": "Rejoignez notre équipe d'infrastructure pour orchestrer nos déploiements automatisés et nos conteneurs Docker/Kubernetes.",
+        "domaine": "Cloud & DevOps",
+        "years_required": 5,
+        "image": "offre_devops.jpg",
+        "id_recruteur": 2,
+        "created_at": "2026-09-21T11:30:00Z"
+    },
+    {
+        "id": 3,
+        "titre": "Développeur Frontend React / UI",
+        "description": "Création d'interfaces interactives, réactives et accessibles au sein d'une équipe agile et dynamique.",
+        "domaine": "Développement Web",
+        "years_required": 2,
+        "image": "offre_frontend.jpg",
+        "id_recruteur": 3,
+        "created_at": "2026-09-22T09:15:00Z"
+    },
+    {
+        "id": 4,
+        "titre": "Data Analyst & BI Specialist",
+        "description": "Analyse approfondie de données métiers, conception de tableaux de bord décisionnels et modélisation SQL.",
+        "domaine": "Data & Intelligence Décisionnelle",
+        "years_required": 4,
+        "image": "offre_data.jpg",
+        "id_recruteur": 3,
+        "created_at": "2026-09-22T14:45:00Z"
+    }
+]

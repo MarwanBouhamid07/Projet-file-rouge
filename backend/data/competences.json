@@ -1,0 +1,12 @@
+[
+    { "id": 1, "nom": "PHP / Laravel" },
+    { "id": 2, "nom": "MySQL / Base de données" },
+    { "id": 3, "nom": "JavaScript / TypeScript" },
+    { "id": 4, "nom": "React / Vue.js" },
+    { "id": 5, "nom": "Docker / Kubernetes" },
+    { "id": 6, "nom": "Git / CI-CD" },
+    { "id": 7, "nom": "Python / Data Analysis" },
+    { "id": 8, "nom": "HTML5 / CSS3 Modern" },
+    { "id": 9, "nom": "API REST / GraphQL" },
+    { "id": 10, "nom": "Linux / Administration Système" }
+]
