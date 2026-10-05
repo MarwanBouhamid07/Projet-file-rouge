@@ -13,24 +13,26 @@
     var DASHBOARD_PAGE = 'dashboard.html';
 
     /**
-     * Lightweight session check: every admin route (incl. GET offres and
-     * GET competences) requires an admin session, so a single 401 probe is
-     * enough and never leaks protected data.
+     * Lightweight session check: GET resource=session is auth-free and only
+     * reports { authenticated, user } — never any protected data — so it is
+     * safe to call from any page (public or admin).
      */
     async function isAuthorized() {
-        var result = await SmartMatch.apiRequest('offres');
-        if (result.status === 401 || result.status === 403) {
+        var result = await SmartMatch.apiRequest('session');
+        if (!result.ok) {
             return false;
         }
-        if (result.ok) {
+        var data = (result.payload && result.payload.data) || {};
+        if (data.authenticated === true) {
             return true;
         }
-        var probe = await SmartMatch.apiRequest('session');
-        if (!probe.ok) {
+        // Fallback: a protected route (competences is always admin-only)
+        // answering 401/403 proves the session is not elevated.
+        var probe = await SmartMatch.apiRequest('competences');
+        if (probe.status === 401 || probe.status === 403) {
             return false;
         }
-        var data = (probe.payload && probe.payload.data) || {};
-        return data.authenticated === true;
+        return probe.ok;
     }
 
     /**

@@ -643,14 +643,17 @@ try {
             break;
 
         case 'offres':
-            // Spec §5 / §8 / §10: every offres route requires an admin session.
-            // The public main page (index.html) fetches through an admin session
-            // cookie: this single rule is what admin-auth.js probes for 401.
-            requireAdmin();
+            // Spec conflict resolved: §8 / DoD require the public main page to
+            // fetch GET offres anonymously, so only reads are public here;
+            // POST/PUT/DELETE still require an admin session (§5, §7).
+            if ($method !== 'GET') {
+                requireAdmin();
+            }
             handleOffres($method, $id);
             break;
 
         case 'competences':
+            // Spec §5: every competences route requires an admin session.
             requireAdmin();
             handleCompetences($method, $id);
             break;
